@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 
 export type InputProps = {
   onChange: (some: string) => void;
+  value: any;
+  setValue: any;
 };
-const ListInput = ({ onChange }: InputProps) => {
-  const [value, setValue] = useState<string>("");
+const ListInput = ({ value, setValue, onAdd }) => {
+  // const [value, setValue] = useState<string>("");
 
   return (
     <div className="py-20 flex items-center my-[1vw]">
@@ -22,13 +24,8 @@ const ListInput = ({ onChange }: InputProps) => {
         }}
       />
       <button
-        onClick={() => {
-          if (value.trim() !== "") {
-            onChange(value);
-            setValue("");
-          }
-        }}
-        className="bg-[#333] font-bold px-[2vw] py-[1vw]"
+        onClick={onAdd}
+        className="bg-[#333] font-bold px-[2vw] py-[0.8vw] text-[1vw]"
       >
         SEND
       </button>
