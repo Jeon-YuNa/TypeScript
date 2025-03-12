@@ -1,0 +1,79 @@
+.box {
+  width: 100%;
+  padding: 1vw 2.5vw;
+  border-radius: 10px;
+  background-color: #153a5e80;
+  backdrop-filter: blur(6px);
+}
+.scrollWrap::-webkit-scrollbar {
+  width: 4px;
+  height: 90%;
+  margin: 10px;
+}
+.scrollWrap::-webkit-scrollbar-thumb {
+  background-color: rgb(109, 153, 204);
+  border-radius: 50px;
+}
+.scrollWrap::-webkit-scrollbar-track {
+  background-color: #0d233a80;
+  border-radius: 50px;
+}
+.list {
+  padding: 16px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: linear-gradient(
+    90deg,
+    rgba(133, 173, 219, 0.6) 0%,
+    rgba(50, 111, 185, 0.6) 100%
+  );
+  margin: 20px 0;
+}
+.listInput {
+  width: 20px;
+  position: relative;
+}
+.listInput input {
+  outline: none;
+  opacity: 0;
+  width: 20px;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+.listInput span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+.listText {
+  width: 90%;
+  color: #fff;
+  margin-left: 20px;
+  font-size: 20px;
+}
+.listbtn {
+  width: 26px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.list.active {
+  background-image: none;
+  border: 1px solid #fff;
+  opacity: 0.5;
+}
+.list.active .listInput span {
+  background-color: #fff;
+}
+.list.active .listText {
+  text-decoration: line-through;
+}
