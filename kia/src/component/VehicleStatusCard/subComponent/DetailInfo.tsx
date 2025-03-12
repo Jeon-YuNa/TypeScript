@@ -1,6 +1,3 @@
-import { CoolGrayColors } from "../../VehicleStatusCard/style/statusColor";
-
-
 type DetailInfoProps = {
   text: string;
   infoData: string;
@@ -15,12 +12,10 @@ const DetailInfo = ({ text, infoData }: DetailInfoProps) => {
         justifyContent: "space-between",
       }}
     >
-      <span style={{CoolGrayColors.Cool_Gray10}}>{text}</span>
+      <span>{text}</span>
       <span>{infoData}</span>
     </li>
   );
 };
 
 export default DetailInfo;
-
-

@@ -3,6 +3,7 @@ import { cardData } from "./data/CardData";
 import DetailTop from "./subComponent/DetailTop";
 import DetailCenter from "./subComponent/DetailCenter";
 import DetailInfo from "./subComponent/DetailInfo";
+import DeatailButton from "./subComponent/DetailButton";
 
 const Cardetail = () => {
   const { teemo } = useParams(); //URL 읽어주는 친구
@@ -12,6 +13,16 @@ const Cardetail = () => {
   });
 
   if (!filterData) return <>no Data</>;
+
+  const ButtonText = () => {
+    if (filterData.carStatus == "대기") {
+      return "인증 검수 시작";
+    } else if (filterData.carStatus == "미완료") {
+      return "이어서 진행";
+    } else {
+      return "";
+    }
+  };
 
   return (
     <>
@@ -30,6 +41,16 @@ const Cardetail = () => {
             <DetailInfo text={"주행거리"} infoData={filterData.mileage} />
           </ul>
         </div>
+        {filterData.carStatus != "완료" ? (
+          <DeatailButton
+            text={
+              filterData.carStatus == "대기" ? "인증 검수 시작" : "이어서 진행"
+            }
+            status={filterData.carStatus}
+          />
+        ) : (
+          ""
+        )}
       </section>
     </>
   );
